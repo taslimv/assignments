@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      #messages {
+        color: red;
+        padding-left: 90px;
+      }
+    </style>
+    <script>
+      function myfun(event) {
+        var a = document.getElementById("mobilenumber").value;
+        if (isNaN(a) || a == "") {
+          document.getElementById("messages").innerHTML =
+            "**Enter only numbers*";
+        } else {
+          document.getElementById("messages").innerHTML = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="mobilenumber">
+        Mobile Number:
+        <input
+          type="tel"
+          id="mobilenumber"
+          name="mobilenumber"
+          value=""
+          required
+          onkeypress="myfun(event)" /></label
+      ><br />
+      <span id="messages"></span><br />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
